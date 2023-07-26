@@ -1,6 +1,8 @@
 CREATE SEQUENCE IF NOT EXISTS hibernate_sequence START 1;
 
-CREATE FUNCTION gen_random_uuid() RETURNS uuid as $$ SELECT md5(random()::text || clock_timestamp()::text)::uuid $$ LANGUAGE SQL;
+CREATE FUNCTION gen_random_uuid() 
+    RETURNS uuid as $$ SELECT md5(random()::text || clock_timestamp()::text)::uuid $$ 
+    LANGUAGE SQL;
 
 insert into Associate (id, name)
  values (1, 'Jaime');
